@@ -103,14 +103,15 @@ RSpec.describe ZoosController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "The New Zoo"}
       }
 
       it "updates the requested zoo" do
         zoo = Zoo.create! valid_attributes
         put :update, {:id => zoo.to_param, :zoo => new_attributes}, valid_session
         zoo.reload
-        skip("Add assertions for updated state")
+
+        expect(zoo.name).to eq("The New Zoo")
       end
 
       it "assigns the requested zoo as @zoo" do

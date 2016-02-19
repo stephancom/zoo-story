@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :zoo do
-    name "MyZoo"
+    name "Zoobilee"
   end
 end

@@ -7,8 +7,8 @@
       = pluralize Zoo.count, "Zoo"
       |  with 
       = pluralize Animal.count, "Animal"
-      / |  of 
-      / = pluralize Species.count, "Unique Species"
+      |  of 
+      = pluralize Species.count, "Unique Species"
 
   = link_to "Check out the zoos!", zoos_path, class: "btn btn-default col-xs-12 col-md-6"
   = link_to "Check out the animals!", animals_path, class: "btn btn-default col-xs-12 col-md-6"    

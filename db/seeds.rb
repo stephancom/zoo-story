@@ -10,3 +10,7 @@
 ['Central Park', 'Bronz', 'Prospect Park', 'Queens', 'Staten Island', 'Lincoln Park', 'Brookfield'].each do |name|
     Zoo.where(name: name).first_or_create!
 end
+
+I18n::t('.species').sort.each do |name|
+  Species.where(name: name).first_or_create!
+end

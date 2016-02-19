@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe Species, type: :model do
-  it { is_expected.to have_db_column :name }
+  it { should have_db_column :name }
+  it { should have_many :animals }
 
   describe "validations" do
     it "should be invalid with a blank name" do

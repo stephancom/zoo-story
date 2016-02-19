@@ -14,3 +14,8 @@ end
 I18n::t('.species').sort.each do |name|
   Species.where(name: name).first_or_create!
 end
+
+# make 100 random animals
+100.times do
+  Animal.create(name: Faker::Name.first_name, species: Species.order("RANDOM()").first, zoo: Zoo.order("RANDOM()").first)
+end

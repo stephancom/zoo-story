@@ -6,6 +6,8 @@
       thead
         tr
           th Name
+          th Animals
+          th Species
           th
           th
           th
@@ -13,8 +15,9 @@
       tbody
         - @zoos.each do |zoo|
           tr
-            td = zoo.name
-            td = link_to 'Show', zoo
+            td = link_to zoo.name, zoo
+            td = link_to pluralize(zoo.animals_count, "animal"), zoo_animals_path(zoo)
+            td = zoo.species_count
             td = link_to 'Edit', edit_zoo_path(zoo)
             td = link_to 'Destroy', zoo, data: {:confirm => 'Are you sure?'}, :method => :delete
 

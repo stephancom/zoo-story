@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :zoos
+  resources :animals
+  resources :zoos do
+    resources :animals, only: [:index, :create]  
+  end
   root to: 'visitors#index'
 end

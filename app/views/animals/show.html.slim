@@ -1,0 +1,16 @@
+.row
+  .col-xs-12
+    h1 Meet #{@animal.name}!
+
+    h2
+      = @animal.name
+      |  is a 
+      = @animal.species_name
+
+    h2 
+      | You can find 
+      = @animal.name
+      |  at 
+      = link_to @animal.zoo_name, @animal.zoo
+
+    = link_to "Edit #{@animal.name}", edit_animal_path(@animal), class: 'btn btn-primary'

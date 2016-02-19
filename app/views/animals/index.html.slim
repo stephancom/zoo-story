@@ -1,0 +1,43 @@
+.row
+  .col-sm-12
+    h1
+      - if @zoo
+        | Animals at 
+        = @zoo.name
+      - else
+        | All animals
+
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th Name
+          th Zoo
+          th Species
+          th
+          th
+          th
+
+      tbody
+        - @animals.each do |animal|
+          tr
+            td = link_to animal.name, animal
+            td = link_to animal.zoo_name, animal.zoo
+            td = animal.species_name
+            td = link_to 'Edit', edit_animal_path(animal)
+            td = link_to 'Destroy', animal, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+    br
+    - if @zoo
+      h3 Add a new animal to #{@zoo.name}
+      = simple_form_for(@animal) do |f|
+        = f.error_notification
+
+        .form-inputs
+          = f.input :name
+          = f.input :zoo_id, as: :hidden
+          = f.association :species, collection: Species.order(:name)
+
+        .form-actions
+          = f.button :submit
+    - else
+      = link_to 'New Animal', new_animal_path, class: 'btn btn-lg btn-primary'

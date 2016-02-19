@@ -1,0 +1,10 @@
+= simple_form_for(@animal) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :zoo, collection: Zoo.order(:name)
+    = f.association :species, collection: Species.order(:name)
+
+  .form-actions
+    = f.button :submit

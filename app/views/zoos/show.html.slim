@@ -1,6 +1,15 @@
-- content_for :title, @zoo.name
-h1= @zoo.name
+.row
+  .col-xs-12
+    - content_for :title, @zoo.name
+    h1
+      = @zoo.name
 
-= link_to 'Edit', edit_zoo_path(@zoo)
-'|
-= link_to 'Back', zoos_path
+    h3
+      = @zoo.name
+      |  has 
+      = @zoo.species.map { |s| s.name.pluralize }.to_sentence
+      |  &nbsp;
+      = link_to 'See Animals', zoo_animals_path(@zoo), class: 'btn btn-primary'
+.row
+  .col-xs-12.col-md-2= link_to "Edit #{@zoo.name}", edit_zoo_path(@zoo), class: 'btn btn-primary'
+  .col-xs-12.col-md-2= link_to 'Back to zoos', zoos_path, class: 'btn btn-primary'

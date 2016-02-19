@@ -48,9 +48,10 @@ RSpec.describe AnimalsController, type: :controller do
 
   describe "GET #index for zoo" do
     it "assigns all animals at this zoo as @animals" do
+      zoo2 = FactoryGirl.create :zoo, name: "Archer Zoo"
       animal1 = Animal.create! valid_attributes
-      animal2 = Animal.create! valid_attributes
-      get :index, {zoo_id: animal2.zoo_id}, valid_session
+      animal2 = Animal.create! name: "Pam", zoo: zoo2, species: species
+      get :index, {zoo_id: zoo2.id}, valid_session
       expect(assigns(:animals)).to eq([animal2])
     end
   end

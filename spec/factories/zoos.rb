@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :zoo do
-    name "MyString"
+    name "MyZoo"
   end
 end

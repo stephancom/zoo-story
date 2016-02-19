@@ -1,2 +1,5 @@
 / add navigation links to this file
-li= link_to 'Fork me!', 'https://github.com/stephancom/zoo-story', target: '_blank'
+ul.nav.navbar-nav.navbar-left
+  li(class= 'active' if controller.controller_name == 'zoos')= link_to 'Zoos', zoos_path
+ul.nav.navbar-nav.navbar-right
+  li= link_to 'Fork me!', 'https://github.com/stephancom/zoo-story', target: '_blank'

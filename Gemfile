@@ -35,6 +35,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'shoulda'
 end
 group :production do
   gem 'rails_12factor'

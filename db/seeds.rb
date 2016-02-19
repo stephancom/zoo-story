@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+['Central Park', 'Bronz', 'Prospect Park', 'Queens', 'Staten Island', 'Lincoln Park', 'Brookfield'].each do |name|
+    Zoo.where(name: name).first_or_create!
+end

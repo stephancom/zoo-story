@@ -1,8 +1,5 @@
-p#notice = notice
-
-p
-  strong Name:
-  = @zoo.name
+- content_for :title, @zoo.name
+h1= @zoo.name
 
 = link_to 'Edit', edit_zoo_path(@zoo)
 '|

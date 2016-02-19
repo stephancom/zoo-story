@@ -1,5 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Zoo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Zoo do
+  it { is_expected.to have_db_column :name }
+
+  describe "validations" do
+    it "should be invalid with a blank name" do
+      zoo = FactoryGirl.build :zoo, name: ''
+      expect(zoo).not_to be_valid
+    end
+  end
 end

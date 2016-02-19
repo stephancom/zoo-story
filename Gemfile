@@ -37,6 +37,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'shoulda'
+  gem 'simplecov'
 end
 group :production do
   gem 'rails_12factor'

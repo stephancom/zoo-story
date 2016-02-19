@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Zoo do
+describe Zoo, type: :model do
   it { is_expected.to have_db_column :name }
 
   describe "validations" do

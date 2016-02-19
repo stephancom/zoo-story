@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @zoo.name
+
+= link_to 'Edit', edit_zoo_path(@zoo)
+'|
+= link_to 'Back', zoos_path

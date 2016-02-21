@@ -18,6 +18,7 @@ Please create a Rails application for keeping a catalog of zoos. The app should 
 
 Note the lack of authentication, authorization, or secrets setup - these was not called for in the spec.
 They would likely be implemented with the Devise, Cancancan or Pundit, and Figaro gems respectively.
+Todo: integration testing?
 
 See it running at [stephancom-zoo-story](https://stephancom-zoo-story.herokuapp.com)
 
